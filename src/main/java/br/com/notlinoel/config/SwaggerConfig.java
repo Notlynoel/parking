@@ -27,7 +27,7 @@ public class SwaggerConfig {
 	@Bean
 	public Docket getDocket() {
 		return new Docket(DocumentationType.SWAGGER_2).select()
-				.apis(RequestHandlerSelectors.basePackage("one.digitalinnovation.parking")).build().apiInfo(metaData())
+				.apis(RequestHandlerSelectors.basePackage("br.com.notlinoel")).build().apiInfo(metaData())
 				.securityContexts(Arrays.asList(actuatorSecurityContext()))
 				.securitySchemes(Arrays.asList(basicAuthScheme()));
 	}
@@ -55,8 +55,11 @@ public class SwaggerConfig {
 	}
 
 	private ApiInfo metaData() {
-		return new ApiInfoBuilder().title("Parking REST API").description("Spring Boot REST API for Parking")
-				.version("1.0.0").license("Apache License Version 2.0")
+		return new ApiInfoBuilder()
+				.title("Parking REST API")
+				.description("Spring Boot REST API for Parking | By notlinoel.com.br")
+				.version("1.0.0")
+				.license("Apache License Version 2.0")
 				.licenseUrl("https://www.apache.org/licenses/LICENSE-2.0\"").build();
 	}
 
