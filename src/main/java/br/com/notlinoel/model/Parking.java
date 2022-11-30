@@ -3,11 +3,16 @@ package br.com.notlinoel.model;
 import java.io.Serializable;
 import java.time.LocalDateTime;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
 public class Parking implements Serializable {
 
 	private static final long serialVersionUID = -3600562733479123037L;
 	
 	// Declaração de variáveis de instância
+	 @Id
 	private String id;
 	private String license;
 	private String state;
